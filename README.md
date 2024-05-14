@@ -19,7 +19,7 @@ implementation("com.appliedrec.verid:face-detection-mp:1.0.0")
 
 All the libraries in this project implement the [FaceDetection](https://github.com/AppliedRecognition/Ver-ID-Common-Types-Android/blob/main/lib/src/main/java/com/appliedrec/verid/common/FaceDetection.kt) interface. The interface contains a single method `detectFacesInImage`.
 
-### Example: detecting a face in image using MediaPipe face detection wrapper
+### Example: detecting a face in image using [MediaPipe face detection](https://developers.google.com/mediapipe/solutions/vision/face_detector/android) wrapper
 
 ```kotlin
 import android.content.Context
