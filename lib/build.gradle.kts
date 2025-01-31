@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.appliedrec.verid.facedetection.mp"
-    compileSdk = 34
+    namespace = "com.appliedrec.verid3.facedetection.mp"
+    compileSdk = 35
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
         testOptions.targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -39,15 +39,17 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.mediapipe.vision)
     implementation(libs.verid.common)
+    implementation(libs.verid.common.serialization)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.kotlinx.coroutines.core)
 }
 
 publishing {
     publications {
         create<MavenPublication>("lib") {
-            groupId = "com.appliedrec.verid"
+            groupId = "com.appliedrec.verid3"
             artifactId = "face-detection-mp"
             version = "1.0.0"
             afterEvaluate {
@@ -88,9 +90,18 @@ publishing {
                 password = project.findProperty("mavenCentralPassword") as String?
             }
         }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/AppliedRecognition/Ver-ID-3D-Android-Libraries")
+            credentials {
+                username = project.findProperty("gpr.user") as String?
+                password = project.findProperty("gpr.token") as String?
+            }
+        }
     }
 }
 
 signing {
+    useGpgCmd()
     sign(publishing.publications["lib"])
 }

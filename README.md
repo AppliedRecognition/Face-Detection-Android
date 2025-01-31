@@ -7,13 +7,37 @@ The interface conformance makes the libraries available to the Ver-ID SDK's face
 
 ## Installation
 
-The face detection libraries are released on [Maven Central](https://central.sonatype.com). Ensure that `repositories` in your build file contain `mavenCentral()`.
+Please [contact Applied Recognition](mailto:support@appliedrecognition.com) to obtain credentials to access the package manager repositories.
 
-Add the following dependency in your **build.gradle.kts** file:
+1. Add the following properties in your gradle.properties file:
 
-```
-implementation("com.appliedrec.verid:face-detection-mp:1.0.0")
-```
+    ```
+    gpr.user=x-access-token
+    gpr.token=<token generated using private key>
+    ```
+2. Add the following to your project's **settings.gradle.kts**:
+
+    ```kotlin
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenCentral()
+            maven {
+                url = uri("https://maven.pkg.github.com/AppliedRecognition/Ver-ID-3D-Android-Libraries")
+                credentials {
+                    username = settings.extra["gpr.user"] as String?
+                    password = settings.extra["gpr.token"] as String?
+                }
+            }
+        }
+    }
+    ```
+3. Add the following dependency in your **build.gradle.kts** file:
+
+    ```kotlin
+    implementation("com.appliedrec.verid:face-detection-mp:1.0.0")
+    ```
 
 ## Usage
 

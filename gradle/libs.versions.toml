@@ -1,12 +1,13 @@
 [versions]
 agp = "8.3.0"
 kotlin = "1.9.0"
-coreKtx = "1.12.0"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
+kotlinx-coroutines-core = "1.6.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -15,8 +16,10 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-mediapipe-vision = { group = "com.google.mediapipe", name = "tasks-vision", version = "0.10.14" }
-verid-common = { group = "com.appliedrec.verid", name = "common", version = "1.0.0" }
+mediapipe-vision = { group = "com.google.mediapipe", name = "tasks-vision", version = "0.20230731" }
+verid-common = { group = "com.appliedrec.verid3", name = "common", version = "1.0.0" }
+verid-common-serialization = { group = "com.appliedrec.verid3", name = "common-serialization", version = "1.0.0" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
