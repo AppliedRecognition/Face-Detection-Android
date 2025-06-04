@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    id("com.android.library")
     alias(libs.plugins.jetbrainsKotlinAndroid)
     `maven-publish`
     signing
@@ -50,14 +50,14 @@ publishing {
     publications {
         create<MavenPublication>("lib") {
             groupId = "com.appliedrec.verid3"
-            artifactId = "face-detection-mp"
+            artifactId = "face-landmark-detection-mp"
             version = "1.0.0"
             afterEvaluate {
                 from(components["release"])
             }
             pom {
-                name.set("MediaPipe Face Detection for Ver-ID")
-                description.set("Face detection implementation for Ver-ID SDK using MediaPipe")
+                name.set("MediaPipe Face Landmark Detection for Ver-ID")
+                description.set("Face detection implementation for Ver-ID SDK using MediaPipe face landmark detection")
                 url.set("https://github.com/AppliedRecognition/Face-Detection-MediaPipe-Android")
                 licenses {
                     license {

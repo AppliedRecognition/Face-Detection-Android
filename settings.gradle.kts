@@ -28,4 +28,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Face Detection"
 include(":lib")
- 
+include(":landmark-detection")
