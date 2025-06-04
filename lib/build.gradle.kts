@@ -58,11 +58,11 @@ publishing {
             pom {
                 name.set("MediaPipe Face Detection for Ver-ID")
                 description.set("Face detection implementation for Ver-ID SDK using MediaPipe")
-                url.set("https://github.com/AppliedRecognition/Face-Detection-MediaPipe-Android")
+                url.set("https://github.com/AppliedRecognition/Face-Detection-Android")
                 licenses {
                     license {
                         name.set("Commercial")
-                        url.set("https://raw.githubusercontent.com/AppliedRecognition/Face-Detection-MediaPipe-Android/main/LICENCE.txt")
+                        url.set("https://raw.githubusercontent.com/AppliedRecognition/Face-Detection-Android/main/LICENCE.txt")
                     }
                 }
                 developers {
@@ -73,9 +73,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/AppliedRecognition/Face-Detection-MediaPipe-Android.git")
-                    developerConnection.set("scm:git:ssh://github.com/AppliedRecognition/Face-Detection-MediaPipe-Android.git")
-                    url.set("https://github.com/AppliedRecognition/Face-Detection-MediaPipe-Android")
+                    connection.set("scm:git:git://github.com/AppliedRecognition/Face-Detection-Android.git")
+                    developerConnection.set("scm:git:ssh://github.com/AppliedRecognition/Face-Detection-Android.git")
+                    url.set("https://github.com/AppliedRecognition/Face-Detection-Android")
                 }
             }
         }
