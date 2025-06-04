@@ -18,10 +18,14 @@ dependencyResolutionManagement {
         mavenCentral()
         maven {
             url = uri("https://maven.pkg.github.com/AppliedRecognition/Ver-ID-Releases-Android")
+            credentials {
+                username = settings.extra["gpr.user"] as String?
+                password = settings.extra["gpr.token"] as String?
+            }
         }
     }
 }
 
 rootProject.name = "Face Detection"
-include(":lib")
-include(":landmark-detection")
+include(":face-detection")
+include(":face-landmark-detection")

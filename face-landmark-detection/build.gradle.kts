@@ -48,9 +48,9 @@ dependencies {
 
 publishing {
     publications {
-        create<MavenPublication>("lib") {
-            groupId = "com.appliedrec.verid3"
-            artifactId = "face-landmark-detection-mp"
+        create<MavenPublication>("release") {
+            groupId = "com.appliedrec"
+            artifactId = "verid3-face-landmark-detection-mp"
             version = "1.0.0"
             afterEvaluate {
                 from(components["release"])
@@ -103,5 +103,5 @@ publishing {
 
 signing {
     useGpgCmd()
-    sign(publishing.publications["lib"])
+    sign(publishing.publications["release"])
 }
