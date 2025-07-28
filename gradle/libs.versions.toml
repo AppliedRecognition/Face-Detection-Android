@@ -13,8 +13,8 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 mediapipe-vision = { group = "com.google.mediapipe", name = "tasks-vision", version = "0.20230731" }
-verid-common = { group = "com.appliedrec", name = "verid3-common", version = "2.1.0" }
-verid-common-serialization = { group = "com.appliedrec", name = "verid3-serialization", version = "1.0.1" }
+verid-common = { group = "com.appliedrec", name = "verid3-common", version = "3.0.0" }
+verid-common-serialization = { group = "com.appliedrec", name = "verid3-serialization", version = "1.0.2" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core"}
 
 [plugins]

@@ -21,12 +21,12 @@ import org.junit.Before
 @RunWith(AndroidJUnit4::class)
 class FaceDetectionTest {
 
-    lateinit var faceDetection: FaceDetection
+    lateinit var faceDetection: FaceLandmarkDetectionMediaPipe
 
     @Before
     fun createFaceDetector() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        faceDetection = FaceDetection(appContext)
+        faceDetection = FaceLandmarkDetectionMediaPipe(appContext)
     }
 
     @Test

@@ -27,6 +27,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Face Detection"
+rootProject.name = "Face Detection MediaPipe"
 include(":face-detection")
 include(":face-landmark-detection")

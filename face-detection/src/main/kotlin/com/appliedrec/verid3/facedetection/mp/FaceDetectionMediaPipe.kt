@@ -16,7 +16,7 @@ import kotlin.math.atan2
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetection {
+class FaceDetectionMediaPipe(context: Context): com.appliedrec.verid3.common.FaceDetection {
 
     private val faceDetector: FaceDetector
 
@@ -32,7 +32,7 @@ class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetectio
         faceDetector = FaceDetector.createFromOptions(context, options)
     }
 
-    override suspend fun detectFacesInImage(image: IImage, limit: Int): Array<Face> {
+    override suspend fun detectFacesInImage(image: IImage, limit: Int): List<Face> {
         val bitmap = image.toBitmap()
         val mediapipeImage = BitmapImageBuilder(bitmap).build()
         val result = faceDetector.detect(mediapipeImage)
@@ -41,7 +41,7 @@ class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetectio
             val leftEye = leftEye(detection) ?: return@mapNotNull null
             val rightEye = rightEye(detection) ?: return@mapNotNull null
             Face(detection.boundingBox(), angleOfFace(detection), (detection.categories().firstOrNull()?.score() ?: 1f) * 10f, landmarks, leftEye, rightEye, noseTip(detection), mouthCentre(detection))
-        }.toTypedArray()
+        }
     }
 
     private fun landmarksOfFace(face: Detection, imageWidth: Int, imageHeight: Int): Array<PointF> {
