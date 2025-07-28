@@ -5,6 +5,7 @@ import android.graphics.PointF
 import android.graphics.RectF
 import com.appliedrec.verid3.common.EulerAngle
 import com.appliedrec.verid3.common.Face
+import com.appliedrec.verid3.common.FaceDetection
 import com.appliedrec.verid3.common.IImage
 import com.appliedrec.verid3.common.serialization.toBitmap
 import com.google.mediapipe.framework.image.BitmapImageBuilder
@@ -16,7 +17,7 @@ import kotlin.math.atan2
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetection {
+class FaceLandmarkDetectionMediaPipe(context: Context): FaceDetection {
 
     private val faceDetector: FaceLandmarker
 
@@ -31,7 +32,7 @@ class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetectio
         faceDetector = FaceLandmarker.createFromOptions(context, options)
     }
 
-    override suspend fun detectFacesInImage(image: IImage, limit: Int): Array<Face> {
+    override suspend fun detectFacesInImage(image: IImage, limit: Int): List<Face> {
         val bitmap = image.toBitmap()
         val mediapipeImage = BitmapImageBuilder(bitmap).build()
         val result = faceDetector.detect(mediapipeImage)
@@ -46,7 +47,7 @@ class FaceDetection(context: Context): com.appliedrec.verid3.common.FaceDetectio
             val angle = angleFromKeypoints(leftEye, rightEye, noseTip, leftEarTragion, rightEarTragion)
             val bounds = boundsOfFace(mpLandmarks, image.width, image.height)
             Face(bounds, angle, 10f, landmarks, leftEye, rightEye, noseTip, mouthCentre)
-        }.toTypedArray()
+        }
     }
 
     fun filterLandmarksOnFace(face: Face): Face {

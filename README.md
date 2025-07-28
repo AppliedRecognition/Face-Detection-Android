@@ -45,11 +45,11 @@ import android.graphics.Bitmap
 import com.appliedrec.verid3.common.Face
 import com.appliedrec.verid3.common.Image
 import com.appliedrec.verid3.common.serialization.fromBitmap
-import com.appliedrec.verid3.facedetection.mp.FaceDetection
+import com.appliedrec.verid3.facedetection.mp.FaceDetectionMediaPipe
 
 suspend fun detectFaceInImage(context: Context, bitmap: Bitmap): Face? {
   // Create face detection instance
-  val faceDetection = FaceDetection(context)
+  val faceDetection = FaceDetectionMediaPipe(context)
   // Convert the bitmap to a Ver-ID image
   val image = Image.fromBitmap(bitmap)
   // Set the maximum number of faces to detect
