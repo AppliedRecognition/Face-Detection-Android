@@ -53,7 +53,7 @@ dependencies {
 }
 
 mavenPublishing {
-    coordinates("com.appliedred", "face-landmark-detection-mp")
+    coordinates("com.appliedrec", "face-landmark-detection-mp")
     pom {
         name.set("MediaPipe Face Landmark Detection for Ver-ID")
         description.set("Face detection implementation for Ver-ID SDK using MediaPipe face landmark detection")
