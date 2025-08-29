@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:face-detection
+com.appliedrec.verid3.facedetection.mp
+module:face-landmark-detection
+com.appliedrec.verid3.facedetection.mplandmarks

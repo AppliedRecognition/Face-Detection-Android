@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":face-detection/debug":[],":face-detection/main":[],":face-detection/release":[],":face-landmark-detection/debug":[],":face-landmark-detection/main":[],":face-landmark-detection/release":[]}'
