@@ -1,9 +1,12 @@
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
 
 plugins {
     id("com.android.library")
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.vanniktech.publish)
+    alias(libs.plugins.dokka)
     signing
 }
 
@@ -83,4 +86,10 @@ mavenPublishing {
 signing {
     useGpgCmd()
     sign(publishing.publications)
+}
+
+tasks.withType<DokkaTaskPartial>().configureEach {
+    moduleName.set("MediaPipe face landmark detection")
+    moduleVersion.set(project.version.toString())
+    outputDirectory.set(file("../docs"))
 }
