@@ -91,5 +91,4 @@ signing {
 tasks.withType<DokkaTaskPartial>().configureEach {
     moduleName.set("MediaPipe face detection")
     moduleVersion.set(project.version.toString())
-    outputDirectory.set(file("../docs"))
 }

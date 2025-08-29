@@ -91,5 +91,4 @@ signing {
 tasks.withType<DokkaTaskPartial>().configureEach {
     moduleName.set("MediaPipe face landmark detection")
     moduleVersion.set(project.version.toString())
-    outputDirectory.set(file("../docs"))
 }
